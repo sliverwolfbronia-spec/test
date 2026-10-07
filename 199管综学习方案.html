@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>199管综学习方案</title>
+<meta name="description" content="199 管理类综合能力：教培行业现状与零基础高分学习方案，2026 年 10 月整理。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Noto+Serif+SC:wght@600;900&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Noto+Serif+SC:wght@600;900&amp;display=swap"></noscript>
+<style>
+/* 版式：单栏文档。答题卡红 + 2B 铅笔灰，宋体标题、系统黑体正文、等宽字体标数字和时间 */
+:root {
+  --paper: #F7F4F5;
+  --sheet: #FFFFFF;
+  --ink: #23252A;
+  --muted: #676A72;
+  --rule: #E2DCDF;
+  --accent: #C2305A;
+  --accent-soft: #F8E4EA;
+  --mid: #9A9CA4;
+
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141518;
+    --sheet: #1B1C20;
+    --ink: #ECEAEB;
+    --muted: #A4A5AC;
+    --rule: #2D2E34;
+    --accent: #EE6A8B;
+    --accent-soft: #351C25;
+    --mid: #6C6F78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141518;
+  --sheet: #1B1C20;
+  --ink: #ECEAEB;
+  --muted: #A4A5AC;
+  --rule: #2D2E34;
+  --accent: #EE6A8B;
+  --accent-soft: #351C25;
+  --mid: #6C6F78;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding-left: 1.25em; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+b, strong { font-weight: 600; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 44px 72px;
+  display: grid;
+  gap: 56px;
+}
+@media (max-width: 480px) {
+  .wrap { padding-inline: 16px; padding-block: 28px 56px; gap: 44px; }
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.3; text-wrap: balance; }
+h1 { font-size: clamp(30px, 7vw, 44px); font-weight: 900; letter-spacing: .01em; }
+h2 { font-size: clamp(22px, 5vw, 27px); font-weight: 900; }
+h3 { font-size: 19px; font-weight: 600; }
+
+.mono, .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.small { font-size: 14px; color: var(--muted); }
+.ref { font-family: var(--font-mono); font-size: 11px; line-height: 0; }
+.ref a { text-decoration: none; margin-left: 2px; }
+
+/* 页头 */
+.masthead { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; color: var(--accent); letter-spacing: .12em; }
+.lede { font-size: 17px; max-width: 36em; }
+.meta { font-size: 13px; color: var(--muted); }
+
+/* 关键日期 */
+.dates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 560px) { .dates { grid-template-columns: 1fr; } }
+.date {
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 2px;
+}
+.date.is-now { border-color: var(--accent); }
+.date.is-past .d-val { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+.d-label { font-size: 13px; color: var(--muted); letter-spacing: .06em; }
+.d-val { font-family: var(--font-mono); font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.d-state { font-size: 13px; color: var(--accent); min-height: 1.5em; }
+.dates-block { display: grid; gap: 10px; }
+
+/* 章节 */
+section { display: grid; gap: 18px; border-top: 1px solid var(--rule); padding-top: 32px; }
+section > h2 + p { font-size: 17px; }
+.sub { display: grid; gap: 12px; }
+
+/* 专业标签 */
+.chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li {
+  border: 1px solid var(--rule);
+  background: var(--sheet);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 14px;
+}
+.chips b { font-family: var(--font-mono); font-weight: 600; margin-right: 4px; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; }
+.facts span::before { content: "■ "; color: var(--accent); font-size: 10px; vertical-align: 2px; }
+
+/* 分值构成条 */
+.stack { display: grid; gap: 8px; }
+.stack-bar, .stack-labels { display: grid; grid-template-columns: 75fr 60fr 65fr; gap: 3px; }
+.stack-bar span { height: 14px; }
+.stack-bar span:first-child { border-radius: 4px 0 0 4px; }
+.stack-bar span:last-child { border-radius: 0 4px 4px 0; }
+.c-math { background: var(--ink); }
+.c-logic { background: var(--accent); }
+.c-write { background: var(--mid); }
+.stack-labels span { font-size: 14px; min-width: 0; }
+.stack-labels .num { font-weight: 600; margin-left: 4px; }
+
+/* 表格 */
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--sheet); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .04em;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+}
+td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+td[rowspan] { border-bottom: 1px solid var(--rule); }
+td.num { white-space: nowrap; }
+td.key { font-weight: 600; white-space: nowrap; }
+@media (max-width: 480px) {
+  th, td { padding: 9px 10px; }
+  table { font-size: 14px; }
+}
+
+/* 报名人数条形图 */
+.bars { display: grid; gap: 10px; }
+.bars figcaption { font-size: 14px; color: var(--muted); }
+.bar-row { display: grid; grid-template-columns: 3.4em minmax(0, 1fr) 3em; gap: 10px; align-items: center; }
+.bar-row .yr, .bar-row .val { font-family: var(--font-mono); font-size: 14px; font-variant-numeric: tabular-nums; }
+.bar-row .val { font-weight: 600; }
+.track { height: 12px; }
+.fill { display: block; height: 100%; width: calc(var(--v) * 1% / 5); background: var(--mid); border-radius: 0 3px 3px 0; }
+.bar-row.latest .fill { background: var(--accent); }
+.bar-row.latest .val { color: var(--accent); }
+
+/* 要点列表 */
+.points { display: grid; gap: 14px; }
+.points div { display: grid; grid-template-columns: 5.2em minmax(0, 1fr); gap: 12px; }
+.points dt { font-weight: 600; }
+@media (max-width: 480px) {
+  .points div { grid-template-columns: 1fr; gap: 2px; }
+}
+
+.callout { background: var(--accent-soft); border-radius: 12px; padding: 18px 20px; display: grid; gap: 10px; }
+.callout ul { display: grid; gap: 6px; }
+
+/* 目标分 */
+.targets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.t { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 14px 12px; display: grid; gap: 4px; align-content: start; }
+.t-sub { font-size: 14px; color: var(--muted); }
+.t-num { font-family: var(--font-display); font-weight: 900; font-size: clamp(30px, 8vw, 42px); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.t-num small { font-family: var(--font-mono); font-size: 15px; font-weight: 400; color: var(--muted); margin-left: 2px; }
+.t-note { font-size: 13px; color: var(--muted); }
+.total { font-size: 16px; }
+.total .big { font-family: var(--font-display); font-weight: 900; font-size: 24px; color: var(--accent); }
+
+/* 阶段时间线 */
+.phases { list-style: none; padding: 0; display: grid; }
+.phase { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; padding-bottom: 30px; position: relative; }
+.phase:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 19.5px;
+  top: 44px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--rule);
+}
+.bubble {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  background: var(--paper);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 15px;
+}
+.phase-body { display: grid; gap: 10px; min-width: 0; }
+.phase-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-top: 6px; }
+.phase-time { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.tasks { display: grid; grid-template-columns: 3em minmax(0, 1fr); gap: 8px 12px; }
+.tasks dt { font-weight: 600; color: var(--muted); }
+.pass { font-size: 14px; background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; }
+.pass b { color: var(--accent); margin-right: 6px; }
+
+/* 条件充分性判断选项 */
+.opts { list-style: none; padding: 0; display: grid; gap: 6px; }
+.opts li { display: grid; grid-template-columns: 2.8em minmax(0, 1fr); gap: 6px; align-items: baseline; }
+.opt { font-family: var(--font-mono); font-weight: 600; color: var(--accent); }
+
+.list { display: grid; gap: 6px; }
+
+/* 考场用时条 */
+.time-bar { display: grid; grid-template-columns: 60fr 55fr 60fr 5fr; gap: 3px; }
+.time-bar span { height: 14px; }
+.time-bar span:first-child { border-radius: 4px 0 0 4px; }
+.time-bar span:last-child { border-radius: 0 4px 4px 0; }
+.c-check { background: var(--muted); opacity: .5; }
+.legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
+.legend li { display: flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.pitfalls { display: grid; gap: 8px; }
+
+.sources td { font-size: 14px; }
+.sources td:first-child { font-family: var(--font-mono); color: var(--muted); white-space: nowrap; }
+.sources tr:target td { background: var(--accent-soft); }
+
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">管理类专业学位联考 · 科目代码 199</p>
+    <h1>199 管综<br>零基础高分方案</h1>
+    <p class="lede">先花两分钟了解这门考试和培训市场，再照着阶段计划学。按 2027 年考研（2026 年 12 月考试）的最新信息整理。</p>
+    <p class="meta">整理于 2026 年 10 月 7 日。每条事实至少两处来源一致，只有一处来源的会注明。<a href="#sources">查看来源</a></p>
+  </header>
+
+  <div class="dates-block">
+    <div class="dates" aria-label="2027 年考研关键日期">
+      <div class="date" data-start="2026-10-09" data-end="2026-10-12">
+        <span class="d-label">预报名</span>
+        <span class="d-val">10.9 – 10.12</span>
+        <span class="d-state"></span>
+      </div>
+      <div class="date" data-start="2026-10-15" data-end="2026-10-24">
+        <span class="d-label">正式报名</span>
+        <span class="d-val">10.15 – 10.24</span>
+        <span class="d-state"></span>
+      </div>
+      <div class="date" data-start="2026-12-19" data-end="2026-12-19" data-exam="1">
+        <span class="d-label">初试 · 管综</span>
+        <span class="d-val">12.19 8:30–11:30</span>
+        <span class="d-state"></span>
+      </div>
+    </div>
+    <p class="small">在中国研究生招生信息网（yz.chsi.com.cn）报名，每天 9:00–22:00。12 月 19 日下午 14:00–17:00 考英语二，管理类联考一天考完。<span class="ref"><a href="#s1">1</a></span></p>
+  </div>
+
+  <section id="exam">
+    <h2>一、199 考什么</h2>
+    <p>199 是「管理类综合能力」的科目代码。它和英语二（100 分）组成管理类联考，总分 300 分。下面 7 个专业硕士都考这套卷子：</p>
+    <ul class="chips">
+      <li><b>MBA</b>工商管理</li>
+      <li><b>MPA</b>公共管理</li>
+      <li><b>MPAcc</b>会计</li>
+      <li><b>MTA</b>旅游管理</li>
+      <li><b>MLIS</b>图书情报</li>
+      <li><b>MEM</b>工程管理</li>
+      <li><b>MAud</b>审计</li>
+    </ul>
+    <p class="facts"><span>满分 200 分</span><span>180 分钟</span><span>闭卷笔试</span><span>不能用计算器</span></p>
+
+    <figure class="stack">
+      <div class="stack-bar" role="img" aria-label="分值构成：数学基础 75 分，逻辑推理 60 分，写作 65 分">
+        <span class="c-math"></span><span class="c-logic"></span><span class="c-write"></span>
+      </div>
+      <div class="stack-labels" aria-hidden="true">
+        <span>数学<span class="num">75</span></span>
+        <span>逻辑<span class="num">60</span></span>
+        <span>写作<span class="num">65</span></span>
+      </div>
+    </figure>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>部分</th><th>题型</th><th>题量 × 分值</th><th>分数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key" rowspan="2">数学</td><td>问题求解，5 选 1</td><td class="num">15 × 3</td><td class="num">45</td></tr>
+          <tr><td>条件充分性判断</td><td class="num">10 × 3</td><td class="num">30</td></tr>
+          <tr><td class="key">逻辑</td><td>单选，分形式推理、论证推理、综合推理</td><td class="num">30 × 2</td><td class="num">60</td></tr>
+          <tr><td class="key" rowspan="2">写作</td><td>论证有效性分析，600 字左右</td><td class="num">1 篇</td><td class="num">30</td></tr>
+          <tr><td>论说文，700 字左右</td><td class="num">1 篇</td><td class="num">35</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">2025 年起数学新增「幂函数」「锥体」两个考点。2027 年的题型和分值与 2026 年相同。<span class="ref"><a href="#s2">2</a><a href="#s3">3</a></span></p>
+  </section>
+
+  <section id="industry">
+    <h2>二、199 教培行业现状</h2>
+    <p>考研整体在降温，管理类专硕处在政策扩招的方向上，培训市场在收缩中洗牌。</p>
+
+    <figure class="bars" role="img" aria-label="全国考研报名人数：2023 年 474 万，2024 年 438 万，2025 年 388 万，2026 年 343 万">
+      <figcaption>全国考研报名人数（万人）</figcaption>
+      <div class="bar-row"><span class="yr">2023</span><span class="track"><span class="fill" style="--v:474"></span></span><span class="val">474</span></div>
+      <div class="bar-row"><span class="yr">2024</span><span class="track"><span class="fill" style="--v:438"></span></span><span class="val">438</span></div>
+      <div class="bar-row"><span class="yr">2025</span><span class="track"><span class="fill" style="--v:388"></span></span><span class="val">388</span></div>
+      <div class="bar-row latest"><span class="yr">2026</span><span class="track"><span class="fill" style="--v:343"></span></span><span class="val">343</span></div>
+      <p class="small">条形从 0 起算。2027 年人数要等报名结束后公布。</p>
+    </figure>
+
+    <dl class="points">
+      <div>
+        <dt>需求降温</dt>
+        <dd>2026 年考研报名 343 万人，连续三年下降，比 2023 年峰值少 131 万。<span class="ref"><a href="#s4">4</a></span></dd>
+      </div>
+      <div>
+        <dt>专硕扩张</dt>
+        <dd>国家方案提出，专业学位硕士招生扩大到硕士招生总规模的三分之二左右。199 对应的 7 个专业全部是专业学位。<span class="ref"><a href="#s6">6</a></span></dd>
+      </div>
+      <div>
+        <dt>市场收缩</dt>
+        <dd>2024 年考研培训市场约 138.5 亿元，同比下降 11.1%。这是智研咨询的估算，只找到这一个来源。<span class="ref"><a href="#s7">7</a></span></dd>
+      </div>
+      <div>
+        <dt>三类玩家</dt>
+        <dd>综合考研机构；专做 MBA、MPAcc 等方向的垂直机构和 App，如海绵MBA、掌成MBA、文都经管；名师个人品牌，多以成套图书加网课出现，如老吕（吕建刚）的数学、逻辑、写作系列，赵鑫全的逻辑、写作图书。<span class="ref"><a href="#s8">8</a></span></dd>
+      </div>
+      <div>
+        <dt>规则在变</dt>
+        <dd>2026 年国家线 A 区：MBA 总分 146，比上年降 5 分；MPAcc 总分 199，比上年上涨。MEM 的工业工程方向开始调整，清华大学 2027 年把它改为机械专业学位，初试改考数学一。<span class="ref"><a href="#s5">5</a><a href="#s10">10</a></span></dd>
+      </div>
+      <div>
+        <dt>乱象</dt>
+        <dd>「保过班」「协议班」涉嫌虚假宣传，退费难是投诉重点。<span class="ref"><a href="#s11">11</a></span></dd>
+      </div>
+    </dl>
+
+    <div class="callout">
+      <h3>落到选课上</h3>
+      <ul>
+        <li><b>先买真题和书，课按需加。</b>历年真题最重要，也最便宜。</li>
+        <li><b>每科跟一位老师到底。</b>三科可以选不同老师，同一科中途别换体系。</li>
+        <li><b>不报保过班，不签培训贷。</b>付款前看清合同里的退费条款。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="target">
+    <h2>三、先定目标分</h2>
+    <p>国家线只是进复试的门槛。2026 年 A 区国家线：MBA 总分 146、管综 70 分；MPAcc 总分 199、管综 102 分。<span class="ref"><a href="#s5">5</a></span> 名校复试线通常高出很多，以目标院校近两年公布的复试线为准。</p>
+    <div class="targets">
+      <div class="t">
+        <span class="t-sub">数学</span>
+        <span class="t-num">66<small>/75</small></span>
+        <span class="t-note">25 题错 3 题以内</span>
+      </div>
+      <div class="t">
+        <span class="t-sub">逻辑</span>
+        <span class="t-num">52<small>/60</small></span>
+        <span class="t-note">30 题错 4 题以内</span>
+      </div>
+      <div class="t">
+        <span class="t-sub">写作</span>
+        <span class="t-num">52<small>/65</small></span>
+        <span class="t-note">论效 23 + 论说文 29</span>
+      </div>
+    </div>
+    <p class="total">合计 <span class="big">170</span> / 200。这是本方案的高分目标，查完目标院校再上下调。</p>
+  </section>
+
+  <section id="plan">
+    <h2>四、完整方案：12 个月</h2>
+    <p>按距考试 12 个月设计。时间更短就压缩基础期，强化、真题、冲刺三段尽量保留。英语二全程每天 1–1.5 小时，以单词和阅读为主。</p>
+
+    <ol class="phases">
+      <li class="phase">
+        <span class="bubble">0</span>
+        <div class="phase-body">
+          <div class="phase-head"><h3>定方向</h3><span class="phase-time">1–2 周</span></div>
+          <ul class="list">
+            <li>定专业：先查报考条件。MBA、MPA 要求本科毕业后有 3 年以上工作经验，应届生多报 MPAcc、MAud、MLIS。MEM 部分方向 2027 年有调整，先看目标院校招生目录。<span class="ref"><a href="#s9">9</a><a href="#s10">10</a></span></li>
+            <li>定院校：查近两年复试线、招生人数和学费。</li>
+            <li>摸底：限时 180 分钟做一套早年真题，看清题目长什么样。近 5 年真题留到冲刺期。</li>
+            <li>备资料：每科一套主线书课、历年真题、一本错题本。</li>
+          </ul>
+          <p class="pass"><b>过关</b>写下目标院校、目标分和每天固定的学习时段。</p>
+        </div>
+      </li>
+
+      <li class="phase">
+        <span class="bubble">1</span>
+        <div class="phase-body">
+          <div class="phase-head"><h3>基础</h3><span class="phase-time">约 3 个月</span></div>
+          <dl class="tasks">
+            <dt>数学</dt><dd>先补初高中知识：因式分解、一元二次方程与二次函数、不等式、平面几何。再按算术、代数、几何、数据分析学完全部考点，每个考点做例题和基础题。</dd>
+            <dt>逻辑</dt><dd>背熟形式逻辑规则：充分与必要条件、逆否、德摩根律、对当关系。认识论证推理的题型。每天 10 题。</dd>
+            <dt>写作</dt><dd>学会论效的常见缺陷（见第五节）。读 20 篇论说文范文，拆出结构。每周写 1 篇论效。</dd>
+          </dl>
+          <p class="pass"><b>过关</b>数学基础题正确率 80% 以上；逻辑规则能默写；一篇论效材料能找出 4 处缺陷。</p>
+        </div>
+      </li>
+
+      <li class="phase">
+        <span class="bubble">2</span>
+        <div class="phase-body">
+          <div class="phase-head"><h3>强化</h3><span class="phase-time">约 3 个月</span></div>
+          <dl class="tasks">
+            <dt>数学</dt><dd>按题型专项练：应用题、方程与不等式、数列、几何、排列组合与概率。条件充分性判断每周 30 题。做公式卡片。</dd>
+            <dt>逻辑</dt><dd>分题型刷题，每天 20–30 题，每题 2 分钟内。综合推理（排序、匹配、真假话）重点练。</dd>
+            <dt>写作</dt><dd>每周论效、论说文各 1 篇，限时写。建一本素材本。</dd>
+          </dl>
+          <p class="pass"><b>过关</b>数学专项正确率 75% 以上；逻辑 30 题 55 分钟内错 8 题以内；论效 25 分钟写完。</p>
+        </div>
+      </li>
+
+      <li class="phase">
+        <span class="bubble">3</span>
+        <div class="phase-body">
+          <div class="phase-head"><h3>真题</h3><span class="phase-time">约 3 个月</span></div>
+          <ul class="list">
+            <li>早年真题按题型拆开做，近年真题按整套做。</li>
+            <li>整套限时 180 分钟，放在上午 8:30–11:30，和考试同一时段。</li>
+            <li>复盘时间不少于做题时间。错题按原因归类：知识漏洞、审题错误、计算失误、时间不够。</li>
+            <li>写作用真题题目写，对照参考范文修改。</li>
+          </ul>
+          <p class="pass"><b>过关</b>真题总分稳定在目标分减 15 分以内。</p>
+        </div>
+      </li>
+
+      <li class="phase">
+        <span class="bubble">4</span>
+        <div class="phase-body">
+          <div class="phase-head"><h3>冲刺</h3><span class="phase-time">最后 8 周</span></div>
+          <ul class="list">
+            <li>每周 2 套全真模考：近 5 年真题，加少量高质量模拟卷。</li>
+            <li>错题本二刷；公式卡和逻辑规则每天过一遍。</li>
+            <li>写作：论效开头结尾、论说文结构定型，每周各写 2 篇。</li>
+            <li>考前 2 周减量，只做回顾。作息调到上午 8:30 状态最好。</li>
+          </ul>
+          <p class="pass"><b>过关</b>连续 3 次模考达到目标分上下 5 分。</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="sub">
+      <h3>一周怎么排</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>时段</th><th>全职备考 · 每天约 7.5 小时</th><th>在职备考 · 每周约 20 小时</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">上午</td><td>8:30–11:30 数学和逻辑，和考试同一时段</td><td>早起或通勤 40 分钟：逻辑 15 题</td></tr>
+            <tr><td class="key">下午</td><td>英语二 1.5 小时；数学错题 1 小时</td><td>午休 20 分钟：公式卡或单词</td></tr>
+            <tr><td class="key">晚上</td><td>写作或逻辑 1.5 小时；当天复盘 30 分钟</td><td>数学 1 小时；复盘 30 分钟</td></tr>
+            <tr><td class="key">周末</td><td>周六上午限时测试，下午写作 2 篇；周日上午复盘，下午休息</td><td>周六 4 小时：数学和 1 篇写作；周日 4 小时：逻辑、复盘、英语二</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects">
+    <h2>五、三科打法</h2>
+
+    <div class="sub">
+      <h3>数学 · 75 分</h3>
+      <p>条件充分性判断的选项固定，先背熟这五条：</p>
+      <ul class="opts">
+        <li><span class="opt">[A]</span><span>条件（1）充分，条件（2）不充分</span></li>
+        <li><span class="opt">[B]</span><span>条件（2）充分，条件（1）不充分</span></li>
+        <li><span class="opt">[C]</span><span>两个条件单独都不充分，联合起来充分</span></li>
+        <li><span class="opt">[D]</span><span>两个条件单独都充分</span></li>
+        <li><span class="opt">[E]</span><span>两个条件单独不充分，联合起来也不充分</span></li>
+      </ul>
+      <ul class="list">
+        <li>先看每个条件单独能否推出结论，都不行再试联合。</li>
+        <li>多用特殊值代入和排除法。</li>
+        <li>考场不能用计算器，每天做 10 分钟速算。</li>
+        <li>零基础先抓应用题、方程与不等式、数列、平面几何、排列组合与概率，解析几何和立体几何放后面。</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h3>逻辑 · 60 分</h3>
+      <ul class="list">
+        <li>形式推理：先把题干写成符号，比如 A→B，再按规则推。</li>
+        <li>论证推理：先找结论和论据，再判断选项是削弱、加强还是假设。</li>
+        <li>综合推理：画表格，从确定的信息入手。</li>
+        <li>平均每题不到 2 分钟，卡住就跳。</li>
+        <li>错题按原因归类：规则不熟、读错题、推理漏步。</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h3>写作 · 65 分</h3>
+      <p><b>论证有效性分析（30 分）</b>找出材料里 4 处缺陷，每处写一段：引用原文，指出缺陷，说明为什么推不出结论。开头一句概括，结尾一句收束。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>常见缺陷</th><th>怎么认出来</th></tr></thead>
+          <tbody>
+            <tr><td class="key">偷换概念</td><td>同一个词前后意思不同</td></tr>
+            <tr><td class="key">以偏概全</td><td>用个别例子或小样本推出整体</td></tr>
+            <tr><td class="key">不当类比</td><td>拿差别很大的两个对象作比较</td></tr>
+            <tr><td class="key">因果不当</td><td>把先后发生、同时出现当成因果，或因果颠倒</td></tr>
+            <tr><td class="key">推不出</td><td>条件不够推出结论，常见把必要条件当充分条件</td></tr>
+            <tr><td class="key">非此即彼</td><td>只给两种选择，忽略其他可能</td></tr>
+            <tr><td class="key">自相矛盾</td><td>前后说法冲突</td></tr>
+            <tr><td class="key">数据误用</td><td>只看增长率不看基数，或拿规模不同的绝对数直接比</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><b>论说文（35 分）</b>先用一句话写出立意，再按「标题、开头亮观点、3 个分论点、结尾回扣」展开。素材本按常见主题（创新、诚信、合作、长期主义等）各准备 2 个例子。字迹工整，段落分明。</p>
+    </div>
+
+    <div class="sub">
+      <h3>考场 180 分钟怎么分</h3>
+      <div class="time-bar" role="img" aria-label="用时分配：数学 60 分钟，逻辑 55 分钟，写作 60 分钟，涂卡检查 5 分钟">
+        <span class="c-math"></span><span class="c-logic"></span><span class="c-write"></span><span class="c-check"></span>
+      </div>
+      <ul class="legend" aria-hidden="true">
+        <li><span class="sw c-math"></span>数学 60 分钟</li>
+        <li><span class="sw c-logic"></span>逻辑 55 分钟</li>
+        <li><span class="sw c-write"></span>写作 60 分钟</li>
+        <li><span class="sw c-check"></span>涂卡检查 5 分钟</li>
+      </ul>
+      <p>常见两种顺序：先写作再数学、逻辑，先保住 65 分的作文；或者先数学、逻辑再写作，趁头脑清醒做计算。冲刺期两种各模考两次，选定后不再改。</p>
+    </div>
+  </section>
+
+  <section id="sprint">
+    <h2>六、10 周冲刺版</h2>
+    <p>如果参加 2026 年 12 月 19 日的考试，只剩约 10 周。零基础在 10 周内冲 170 难度很大，目标先定为过国家线、接近目标院校复试线。逻辑和写作提分快，优先练；数学先保基础题，难题放弃。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>时间</th><th>重点</th><th>每周产出</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">本周<br><span class="num small">10.7–10.11</span></td><td>报名：10.9–10.12 预报名或 10.15–10.24 正式报名，选一个时段完成。定院校，买真题和一套书。</td><td>报名完成，资料到位</td></tr>
+          <tr><td class="key">第 1–3 周<br><span class="num small">10.12–11.1</span></td><td>逻辑学规则和题型。写作学论效缺陷和段落写法。数学只学应用题、方程与不等式、数列、平面几何、排列组合与概率。</td><td>逻辑每天 20 题；论效 2 篇</td></tr>
+          <tr><td class="key">第 4–7 周<br><span class="num small">11.2–11.29</span></td><td>真题先按题型拆着做，再按整套做。论说文结构定型。</td><td>真题 1–2 套；论效、论说文各 2 篇</td></tr>
+          <tr><td class="key">第 8–9 周<br><span class="num small">11.30–12.13</span></td><td>每周 2–3 套全真模考，放在 8:30–11:30。错题回顾。</td><td>模考 2–3 套</td></tr>
+          <tr><td class="key">第 10 周<br><span class="num small">12.14–12.18</span></td><td>只回顾公式卡、逻辑规则、写作结构。按研招网通知打印准考证，提前看考场。</td><td>作息稳定</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="pitfalls">
+    <h2>七、避坑清单</h2>
+    <ul class="pitfalls">
+      <li><b>只听课不做题。</b>听课和做题的时间至少 1 : 2。</li>
+      <li><b>数学跳过基础。</b>基础不牢，强化期的题看不懂。</li>
+      <li><b>逻辑靠语感。</b>规则不熟，越做越乱。</li>
+      <li><b>写作只背模板。</b>考前至少完整写 20 篇论效、15 篇论说文。</li>
+      <li><b>真题用得太早。</b>近 5 年真题留给冲刺期模考。</li>
+      <li><b>同一科换老师、囤课。</b>资料越多越做不完。</li>
+      <li><b>忽视英语二。</b>总分 300 分里它占 100 分，单科线也要过。</li>
+      <li><b>不看目标院校。</b>复试线和招生人数每年都变，每年都要重新查。</li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <h2>八、来源与核验</h2>
+    <p class="small">核验方式：同一事实在两个以上独立来源中一致才写入；只有一处来源的数据在正文中注明。政策以研招网和目标院校官网的最新公告为准。</p>
+    <div class="table-wrap sources">
+      <table>
+        <thead><tr><th>#</th><th>内容</th><th>来源</th></tr></thead>
+        <tbody>
+          <tr id="s1"><td>1</td><td>2027 年考研报名与初试时间</td><td><a href="https://www.stdaily.com/web/gdxw/2026-09/24/content_587301.html">科技日报</a> · <a href="https://www.yzwb.net/news/jy/202609/t20260924_396211.html">扬子晚报</a> · <a href="https://www.bjnews.com.cn/detail/1790529832189542.html">新京报</a> · <a href="https://m.gmw.cn/2026-09/24/content_1304567613.htm">光明网</a></td></tr>
+          <tr id="s2"><td>2</td><td>199 题型、分值、字数要求</td><td><a href="https://www.fdsm.fudan.edu.cn/fdrs/mba/2023/2023outline.pdf">复旦大学管理学院</a> · <a href="https://mba.zuel.edu.cn/_upload/article/files/6d/f4/087f3b0648f0a2d14a0783aefda2/61a1d1ac-0a1f-404d-ba87-efb420ce45a3.pdf">中南财经政法大学</a> · <a href="https://www.educity.cn/mba/5504516.html">希赛网 2027 解读</a> · <a href="https://www.hqwx.com/mba-kaoshi/news/17811632537186.html">环球网校 2027 解读</a></td></tr>
+          <tr id="s3"><td>3</td><td>2025 年数学新增幂函数、锥体</td><td><a href="https://www.sohu.com/a/808149357_100010521">搜狐</a> · <a href="https://www.sohu.com/a/808932865_121956425">搜狐</a> · <a href="http://www.360doc.com/content/24/1030/08/78614495_1138004382.shtml">360doc</a></td></tr>
+          <tr id="s4"><td>4</td><td>考研报名人数</td><td><a href="https://www.news.cn/20251124/e54d3157f15744f5beb5b76644035f5d/c.html">新华网</a> · <a href="https://www.chinanews.com.cn/gn/2025/11-24/10520788.shtml">中国新闻网</a> · <a href="https://www.thepaper.cn/newsDetail_forward_32030728">澎湃新闻</a></td></tr>
+          <tr id="s5"><td>5</td><td>2026 年国家线（MBA、MPAcc）</td><td><a href="https://www.bjnews.com.cn/detail/1772249678168609.html">新京报</a> · <a href="https://cn.chinadaily.com.cn/a/202602/28/WS69a285d0a310942cc49a0e76.html">中国日报网</a> · <a href="https://mba.phbs.pku.edu.cn/fushibeijingdaxuehuifengshangxueyuan2026niangongshangguanlishuoshiyanjiushengzhaoshengfushixize.pdf">北大汇丰商学院</a> · <a href="https://yz.xjtu.edu.cn/__local/7/5F/4A/6F86A6E3882DE35F670358E7FF7_11193F2F_2AB40.pdf">西安交通大学</a></td></tr>
+          <tr id="s6"><td>6</td><td>专业学位硕士约占三分之二</td><td><a href="https://grs.pku.edu.cn/docs/2020-11/20201118142454599280.pdf">北京大学研究生院</a> · <a href="https://www.rmzxw.com.cn/c/2020-10-23/2696028.shtml">人民政协网</a> · <a href="https://www.eol.cn/zhengce/jiedu/202011/t20201127_2048382.shtml">中国教育在线</a></td></tr>
+          <tr id="s7"><td>7</td><td>考研培训市场规模（单一来源）</td><td><a href="https://www.chyxx.com/industry/1229649.html">智研咨询</a></td></tr>
+          <tr id="s8"><td>8</td><td>垂直机构、App 与名师图书</td><td><a href="https://apps.apple.com/py/app/%E6%B5%B7%E7%BB%B5mba/id1339100515">海绵MBA</a> · <a href="https://apps.apple.com/us/app/%E6%8E%8C%E6%88%90mba-mba-mpacc%E8%80%83%E7%A0%94%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0/id1457949427">掌成MBA</a> · <a href="https://apps.apple.com/pa/app/%E6%96%87%E9%83%BD%E7%BB%8F%E7%AE%A1/id1566482223">文都经管</a> · <a href="https://www.jd.com/tupian/17134408111c737df9e3.html">京东·老吕图书</a> · <a href="https://c.m.163.com/news/sub/T1670905331584.html">网易·吕建刚</a> · <a href="https://www.jd.com/tupian/17137691bf32382a9773.html">京东·赵鑫全图书</a></td></tr>
+          <tr id="s9"><td>9</td><td>MBA、MPA 报考条件</td><td><a href="https://m.thepaper.cn/baijiahao_24669717">澎湃新闻</a> · <a href="https://www.dxsbb.com/news/143141.html">大学生必备网</a></td></tr>
+          <tr id="s10"><td>10</td><td>清华大学工业工程方向调整</td><td><a href="https://www.ie.tsinghua.edu.cn/__local/F/49/54/A3B328F8FA8FF8A8B421693A87A_ACB74E9A_F918.pdf">清华大学工业工程系</a> · <a href="https://c.m.163.com/news/a/L2KA3BQS0530807C.html">网易</a></td></tr>
+          <tr id="s11"><td>11</td><td>保过班与退费纠纷</td><td><a href="https://m.gmw.cn/2025-05/10/content_1304033505.htm">光明网</a> · <a href="https://www.chinanews.com.cn/sh/2022/04-27/9740450.shtml">中国新闻网</a> · <a href="https://tousu.sina.com.cn/articles/view/246553">黑猫投诉</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>整理于 2026 年 10 月 7 日。</p>
+    <p>报名、考试时间和招生政策以中国研究生招生信息网（yz.chsi.com.cn）和目标院校官网为准。</p>
+  </footer>
+
+</main>
+<script>
+(function () {
+  var DAY = 86400000;
+  var now = Date.now();
+  var items = document.querySelectorAll('.date[data-start]');
+  for (var i = 0; i < items.length; i++) {
+    var it = items[i];
+    var start = Date.parse(it.getAttribute('data-start') + 'T00:00:00+08:00');
+    var end = Date.parse(it.getAttribute('data-end') + 'T23:59:59+08:00');
+    var state = it.querySelector('.d-state');
+    if (!state || isNaN(start) || isNaN(end)) continue;
+    if (it.hasAttribute('data-exam')) {
+      var exam = Date.parse(it.getAttribute('data-start') + 'T08:30:00+08:00');
+      var left = Math.ceil((exam - now) / DAY);
+      if (left > 0) { state.textContent = '还有 ' + left + ' 天'; }
+      else if (now <= end) { it.className += ' is-now'; state.textContent = '今天开考'; }
+      else { it.className += ' is-past'; state.textContent = '已结束'; }
+      continue;
+    }
+    if (now > end) { it.className += ' is-past'; state.textContent = '已结束'; }
+    else if (now >= start) { it.className += ' is-now'; state.textContent = '进行中'; }
+    else { state.textContent = Math.ceil((start - now) / DAY) + ' 天后开始'; }
+  }
+})();
+</script>
+</body>
+</html>
